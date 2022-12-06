@@ -1,9 +1,11 @@
+import { InputContainer } from "./styles";
+
 
 export const Input = () =>{
     return (
-      <div >
-      ola
-      </div>
+      <InputContainer >
+      <input />
+      </InputContainer>
     );
   }
   

@@ -1,10 +1,12 @@
-import { Container } from './styles'
+import { Container, Content } from './styles'
 import { Input } from './components/Inpute/Index';
 
 export const App = () =>{
   return (
-    <Container className="App">
-      <Input/>
+    <Container >
+      <Content>
+       <Input />
+      </Content> 
     </Container>
   );
 }
