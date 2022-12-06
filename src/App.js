@@ -1,9 +1,11 @@
+import { Container } from './styles'
+import { Input } from './components/Inpute/Index';
 
 export const App = () =>{
   return (
-    <div className="App">
-      
-    </div>
+    <Container className="App">
+      <Input/>
+    </Container>
   );
 }
 
