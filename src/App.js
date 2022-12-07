@@ -45,6 +45,19 @@ export const App = () =>{
       }
    }
 
+   const handleMultiplicationNumber = () =>{
+
+      if(firstNumber === '0'){
+         setFirstNumber(String(currentNumber));
+         setCurrentNumber('0');
+         setOperation("*");
+      }else{
+         const mult = Number(firstNumber) * Number(currentNumber);
+         setCurrentNumber(String(mult))
+         setOperation("");
+      }
+   }
+   
    const handleEquals = () =>{
       if(firstNumber !== '0' && operation !== "" && currentNumber !== "0"){
          switch(operation){
@@ -53,6 +66,9 @@ export const App = () =>{
                break;
             case '-':
                handleMinusNumber();
+               break;
+            case '*':
+               handleMultiplicationNumber();
                break;
             default:
                break;
@@ -80,7 +96,7 @@ export const App = () =>{
           <Button label="1" onClick={() => handleAddNumber('1')} />
           <Button label="2" onClick={() => handleAddNumber('2')} />
           <Button label="3" onClick={() => handleAddNumber('3')} />
-          <Button label="*" onClick={() => handleAddNumber('')} />
+          <Button label="*" onClick={handleMultiplicationNumber} />
        </Row>
        <Row>
           <Button label="0" onClick={() => handleAddNumber('0')} />
