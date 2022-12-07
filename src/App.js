@@ -57,6 +57,19 @@ export const App = () =>{
          setOperation("");
       }
    }
+
+   const handleDivisionNumber = () =>{
+
+      if(firstNumber === '0'){
+         setFirstNumber(String(currentNumber));
+         setCurrentNumber('0');
+         setOperation("/");
+      }else{
+         const mult = Number(firstNumber) / Number(currentNumber);
+         setCurrentNumber(String(mult))
+         setOperation("");
+      }
+   }
    
    const handleEquals = () =>{
       if(firstNumber !== '0' && operation !== "" && currentNumber !== "0"){
@@ -69,6 +82,9 @@ export const App = () =>{
                break;
             case '*':
                handleMultiplicationNumber();
+               break;
+            case '/':
+               handleDivisionNumber();
                break;
             default:
                break;
@@ -102,7 +118,7 @@ export const App = () =>{
           <Button label="0" onClick={() => handleAddNumber('0')} />
           <Button label="C" onClick={handleClear} />
           <Button label="=" onClick={handleEquals} />
-          <Button label="/" onClick={() => handleAddNumber('')} />
+          <Button label="/" onClick={handleDivisionNumber} />
        </Row>
 
        
